@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+    gmod:
+        container_name: gmod
+        hostname: gmod
+        ports: 
+          - 27015:27015
+          - 27005:27005
+        build: 
+            context: ./game_servers/gmod
+        volumes:
+          - ./game_servers/gmod/gmod_cfg:/home/steam/gmod/garrysmod

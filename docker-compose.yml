@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+    reverseproxy:
+        container_name: reverseproxy
+        hostname: reverseproxy
+        image: nginx
+        ports:
+          - 80:80
+          - 443:443
+        volumes:
+          - ./nginx/:/etc/nginx/
+          - ./sslcerts/:/etc/letsencrypt/
+          - ./websites:/var/www/
+          - /etc/ssl/certs/dhparam.pem:/etc/ssl/certs/dhparam.pem
