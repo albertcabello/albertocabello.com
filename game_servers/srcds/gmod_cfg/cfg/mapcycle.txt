@@ -1,0 +1,17 @@
+//
+// Default mapcycle file for Garry's Mod.
+//
+// It is empty because Garry's Mod does not use mapcycle.txt
+// It only exists so that mapcycle.txt from mountable games ( Portal 2 ) does not load and spam the console with errors
+//
+ttt_bb_teenroom_b2.bsp 
+ttt_community_bowling_v5a.bsp 
+ttt_dolls.bsp 
+ttt_forest_final.bsp 
+ttt_island_2013.bsp 
+ttt_minecraftcity_v4.bsp 
+ttt_ski_resort_a4.bsp 
+ttt_slender_v2.bsp 
+ttt_stargate_v3.bsp 
+ttt_vessel.bsp 
+ttt_waterworld.bsp
