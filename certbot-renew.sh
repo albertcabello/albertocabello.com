@@ -1,3 +1,1 @@
-docker run -it --rm --name certbot -v $PWD/sslcerts -v $PWD/letsencrypt-artifacts/lib:/var/lib/letsencrypt -v $PWD/websites/albertocabello.com:/data/letsencrypt -v $PWD/letsencrypt-artifacts/logs:/var/log/letsencrypt certbot/certbot renew --webroot -w /data/letsencrypt --quiet && docker kill --signal=HUP reverse_proxy
-
-rm -rf $PWD/letsencrypt-artifacts/
+docker run -it --rm --name certbot -v /root/albertocabello.com/sslcerts:/etc/letsencrypt -v /root/albertocabello.com/letsencrypt-artifacts/lib:/var/lib/letsencrypt -v /root/albertocabello.com/websites/ssl-setup:/data/letsencrypt -v /root/albertocabello.com/letsencrypt-artifacts/logs:/var/log/letsencrypt certbot/certbot renew --webroot -w /data/letsencrypt --quiet && docker kill --signal=HUP reverseproxy

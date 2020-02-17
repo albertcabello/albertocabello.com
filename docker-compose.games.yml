@@ -1,13 +1,28 @@
 version: '3'
 
 services:
-    gmod:
-        container_name: gmod
-        hostname: gmod
+    srcds:
+        container_name: srcds
+        hostname: srcds
         ports: 
-          - 27015:27015
-          - 27005:27005
+          - "27015:27015/tcp"
+          - "27015:27015/udp"
+          - "27005:27005/tcp"
+          - "27005:27005/udp"
         build: 
-            context: ./game_servers/gmod
+            context: ./game_servers/srcds
         volumes:
-          - ./game_servers/gmod/gmod_cfg:/home/steam/gmod/garrysmod
+          - ./game_servers/srcds/gmod_cfg:/home/steam/gmod/garrysmod
+        environment: 
+          GAMEMODE: terrortown
+          MAP: ttt_ski_resort_a4.bsp
+    minecraft:
+        container_name: minecraft
+        ports:
+          - "25565:25565/tcp"
+          - "25565:25565/udp"
+        build: ./game_servers/minecraft/vanilla
+        volumes:
+          - ./game_servers/minecraft/vanilla/config/server.properties:/minecraft/server.properties
+          - ./game_servers/minecraft/vanilla/config/eula.txt:/minecraft/eula.txt
+          - ./game_servers/minecraft/vanilla/worlds:/minecraft/worlds

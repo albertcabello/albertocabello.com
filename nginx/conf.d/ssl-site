@@ -1,8 +1,8 @@
 server {
-	listen 80 default_server;
-	listen [::]:80 default_server ipv6only=on;
+	listen 80;
+	listen [::]:80;
 
-	server_name test.albertocabello.com www.test.albertocabello.com;
+	server_name bitwarden.albertocabello.com www.bitwarden.albertocabello.com;
 	root /var/www/ssl-setup;
 
 	location ~ /.well-known/acme-challenge/ {

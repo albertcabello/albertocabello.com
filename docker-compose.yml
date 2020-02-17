@@ -13,3 +13,9 @@ services:
           - ./sslcerts/:/etc/letsencrypt/
           - ./websites:/var/www/
           - /etc/ssl/certs/dhparam.pem:/etc/ssl/certs/dhparam.pem
+    bitwarden:
+        container_name: bitwarden
+        hostname: bitwarden
+        image: bitwardenrs/server:latest
+        volumes:
+          - ./bwdata/:/data

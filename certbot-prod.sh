@@ -1,3 +1,1 @@
-docker run -it --rm -v $PWD/sslcerts:/etc/letsencrypt -v $PWD/letsencrypt-artifacts/lib:/var/lib/letsencrypt -v $PWD/websites/albertocabello.com:/data/letsencrypt -v $PWD/letsencrypt-artifacts/logs:/var/log/letsencrypt certbot/certbot certonly --webroot --email albert.a.cabello@gmail.com --agree-tos  --no-eff-email --webroot-path=/data/letsencrypt --staging -d albertocabello.com -d www.albertocabello.com
-
-rm -rf $PWD/letsencrypt-artifacts
+docker run -it --rm -v /root/albertocabello.com/sslcerts/:/etc/letsencrypt/ -v /root/albertocabello.com/letsencrypt-artifacts/:/var/lib/lets encrypt/ -v /root/albertocabello.com/websites/ssl-setup/:/data/letsencrypt/ -v /root/albertocabello.comletsencrypt-artifacts/logs/:/var/log/letsencrypt certbot/certbot certonly --webroot --email  albert.a.cabello@gmail.com --agree-tos --no-eff-email --webroot-path=/data/letsencrypt -d bitwarden.albertocabello.com -d www.bitwarden.albertocabello.com
